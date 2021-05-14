@@ -1,5 +1,7 @@
+<div class="container bg-light">
 <%= simple_form_for [ @list, @bookmark ] do |f| %>
   <%= f.association :movie %>
   <%= f.input :comment %>
   <%= f.submit "Submit bookmark", class: "btn btn-primary" %>
 <% end %>
+</div>
