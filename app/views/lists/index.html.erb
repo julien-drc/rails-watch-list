@@ -1,0 +1,16 @@
+<div class="container text-center">
+  <div class="banner text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/3001495/screenshots/5795947/dead_muffin_final-02.jpg);">
+      <h1>List of your movies</h1>
+      <%= link_to "add a list", new_list_path, class: "btn btn-outline-light" %>
+    </div>
+    <h3>Lists category:</h3>
+
+
+<div class="cards">
+<% @lists.each do |list| %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.dribbble.com/users/3001495/screenshots/14170144/media/578c2c4c6417b757fe86cc795bdb23cd.jpg)">
+    <%= link_to list.name, list_path(list) %>
+  </div>
+  <% end %>
+</div>
+</div>
