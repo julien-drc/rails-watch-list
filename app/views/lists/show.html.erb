@@ -4,14 +4,14 @@
     <div class="card-trip-infos">
       <div>
         <h2><%= @list.name %></h2>
+        <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
         <%= link_to "comment", new_list_bookmark_path(@list), class:"btn btn-outline-primary" %>
       </div>
-      <% @list.bookmarks.each do |bookmark| %>
-<%= bookmark.movie.title %>
-<%= bookmark.comment %>
-<%= link_to 'detete this list', bookmark_path(bookmark), method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure you want to delete this list?' } %>
-
-<% end %>
+        <% @list.bookmarks.each do |bookmark| %>
+        <%= bookmark.movie.title %>
+        <%= bookmark.comment %>
+        <%= link_to 'detete this list', bookmark_path(bookmark), method: :delete, class: 'btn btn-outline-danger', data: { confirm: 'Are you sure you want to delete this list?' } %>
+      <% end %>
     </div>
   </div>
 
